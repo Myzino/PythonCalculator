@@ -17,5 +17,4 @@ A simple GUI Python Calculator using the tkinter library (`from tkinter import *
 - Ability to type in expressions
 
 
-LEARN PYTHON THROUGH DOCS
-https://docs.python.org/3/
+

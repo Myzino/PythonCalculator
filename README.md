@@ -15,6 +15,7 @@ A simple GUI Python Calculator using the tkinter library (`from tkinter import *
 - Clear All button
 - Clear button
 - Decimals
+- 
 -Trigonometry 
 - Ability to type in expressions
 

@@ -1,5 +1,5 @@
 # PythonCalculator
-A simple GUI Python Calculator using the tkinter library (`from tkinter import *`)
+A simple GUI Python Calculator using the tkinter&math library 
 
 ## Features:
 - Resizable

@@ -27,9 +27,8 @@ class Calculator:
             ('7', 1, 0), ('8', 1, 1), ('9', 1, 2), ('/', 1, 3),
             ('4', 2, 0), ('5', 2, 1), ('6', 2, 2), ('*', 2, 3),
             ('1', 3, 0), ('2', 3, 1), ('3', 3, 2), ('-', 3, 3),
-            ('0', 4, 0), ('.', 4, 1), ('+', 4, 3), ('Tan', 4, 2),
-            ('CA', 5, 0), ('C', 5, 1), ('Sin', 5, 2), ('Cos', 5, 3),
-            ('=', 6, 0)
+            ('0', 4, 0), ('.', 4, 1), ('+', 4, 3), ('=', 4, 2),
+            ('CA', 5, 0), ('C', 5, 1), ('secret', 5, 2), ('', 5, 3),
         ]
 
         for (text, row, col) in buttons:
@@ -63,20 +62,16 @@ class Calculator:
             except Exception as e:
                 gui.entry.delete(0, tk.END)
                 gui.entry.insert(tk.END, "Error")
-        elif char in ['CA', 'C']:
-            if char == 'CA':
-                gui.entry.delete(0, tk.END)
-            elif char == 'C':
-                current_text = gui.entry.get()
-                if current_text:
-                    new_text = current_text[:-1]
-                    gui.entry.delete(0, tk.END)
-                    gui.entry.insert(tk.END, new_text)
-        elif char in ['Sin', 'Cos', 'Tan']:
-            current_text = gui.entry.get()
-            new_text = f"{char}({current_text})"
+        elif char == 'CA':
             gui.entry.delete(0, tk.END)
-            gui.entry.insert(tk.END, new_text)
+        elif char == 'C':
+            current_text = gui.entry.get()
+            if current_text:
+                new_text = current_text[:-1]
+                gui.entry.delete(0, tk.END)
+                gui.entry.insert(tk.END, new_text)
+        elif char == 'secret':
+            gui.entry.insert(tk.END, "Regards ko sa inyong Idol HAHAHAH")
         else:
             current_text = gui.entry.get()
             new_text = current_text + str(char)

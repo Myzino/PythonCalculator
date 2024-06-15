@@ -1,5 +1,6 @@
 # PythonCalculator
-A simple GUI Python Calculator using the tkinter&math library 
+A simple GUI Python Calculator using the tkinter library 
+and math library for trigo function
 
 ## Features:
 - Resizable

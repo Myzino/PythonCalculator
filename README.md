@@ -12,6 +12,7 @@ A simple GUI Python Calculator using the tkinter library (`from tkinter import *
   - Errors
   - Division by Zero Errors
   - Name Errors
+- Clear All button
 - Clear button
 - Decimals
 - Ability to type in expressions

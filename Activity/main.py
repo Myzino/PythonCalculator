@@ -2,10 +2,11 @@ import tkinter as tk
 from function import add, subtract, multiply, divide
 from scientific import Tan, Sin, Cos
 
+
 class Calculator:
     def __init__(gui, root):
         gui.root = root
-        gui.root.title("Calculator")
+        gui.root.title("Trigonometry Calculator")
         
         gui.root.rowconfigure(0, weight=1)
         gui.root.columnconfigure(0, weight=1)
@@ -24,12 +25,13 @@ class Calculator:
         gui.entry.grid(row=0, column=0, columnspan=4, sticky="nsew")
 
         buttons = [
-            ('7', 1, 0), ('8', 1, 1), ('9', 1, 2), ('/', 1, 3),
-            ('4', 2, 0), ('5', 2, 1), ('6', 2, 2), ('*', 2, 3),
-            ('1', 3, 0), ('2', 3, 1), ('3', 3, 2), ('-', 3, 3),
-            ('0', 4, 0), ('.', 4, 1), ('+', 4, 3), ('Tan', 4, 2),
-            ('CA', 5, 0), ('C', 5, 1), ('Sin', 5, 2), ('Cos', 5, 3),
+            ('CA', 1, 0), ('C', 1, 1), ('Sin', 1, 2), ('Cos', 1, 3),
+            ('7', 2, 0), ('8', 2, 1), ('9', 2, 2), ('Tan', 2, 3),
+            ('4', 3, 0), ('5', 3, 1), ('6', 3, 2), ('/', 3, 3),
+            ('1', 4, 0), ('2', 4, 1), ('3', 4, 2), ('*', 4, 3),
+            ('0', 5, 0), ('.', 5, 1), ('+', 5, 3), ('-', 5, 2),
             ('=', 6, 0)
+           
         ]
 
         for (text, row, col) in buttons:
@@ -54,9 +56,10 @@ class Calculator:
                     'subtract': subtract,
                     'multiply': multiply,
                     'divide': divide,
-                    'Tan': Tan,
-                    'Sin': Sin,
-                    'Cos': Cos
+                    'Tan' : Tan,
+                    'Sin' : Sin,
+                    'Cos': Cos,
+                   
                 })
                 gui.entry.delete(0, tk.END)
                 gui.entry.insert(tk.END, str(result))
@@ -66,6 +69,7 @@ class Calculator:
         elif char in ['CA', 'C']:
             if char == 'CA':
                 gui.entry.delete(0, tk.END)
+                gui.entry.insert(tk.END, new_text)
             elif char == 'C':
                 current_text = gui.entry.get()
                 if current_text:

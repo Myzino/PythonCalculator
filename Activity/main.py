@@ -4,7 +4,7 @@ from function import add, subtract, multiply, divide
 class Calculator:
     def __init__(gui, root):
         gui.root = root
-        gui.root.title("Grabe Ka Basic nga Calculator")
+        gui.root.title("Calculator")
         
      
         gui.root.rowconfigure(0, weight=1)
@@ -31,7 +31,7 @@ class Calculator:
             ('4', 2, 0), ('5', 2, 1), ('6', 2, 2), ('*', 2, 3),
             ('1', 3, 0), ('2', 3, 1), ('3', 3, 2), ('-', 3, 3),
             ('0', 4, 0), ('.', 4, 1), ('+', 4, 3), ('=', 4, 2),
-            ('CA', 5, 0), ('secret', 5, 1), ('', 5, 2), ('', 5, 3),
+            ('CA', 5, 0), ('C', 5, 1), ('secret', 5, 2), ('', 5, 3),
         ]
 
         for (text, row, col) in buttons:
@@ -65,6 +65,12 @@ class Calculator:
                 gui.entry.insert(tk.END, "Error")
         elif char == 'CA':
             gui.entry.delete(0, tk.END)
+        elif char == 'C':
+            current_text = gui.entry.get()
+            if current_text:
+                new_text = current_text[:-1]
+                gui.entry.delete(0, tk.END)
+                gui.entry.insert(tk.END, new_text)
         elif char == 'secret':
             gui.entry.insert(tk.END, "Regards ko sa inyong Idol HAHAHAH")
         else:
